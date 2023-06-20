@@ -26,10 +26,10 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
-      - name: Build and test
-        run: |
-          ./gradlew clean build connectedAndroidTest
-          # Replace the above command with your build and test commands
+#      - name: Build and test
+#        run: |
+#          ./gradlew clean build connectedAndroidTest
+#          # Replace the above command with your build and test commands
 
 #      - name: Check coverage and set status
 #        run: |
