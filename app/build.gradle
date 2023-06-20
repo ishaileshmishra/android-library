@@ -7,7 +7,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "io.github.ishaileshmishra.android_library"
+//        applicationId "io.github.ishaileshmishra.android_library"
         minSdk 24
         targetSdk 33
         versionCode 1
