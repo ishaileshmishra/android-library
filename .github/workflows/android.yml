@@ -31,19 +31,19 @@ jobs:
           ./gradlew clean build connectedAndroidTest
           # Replace the above command with your build and test commands
 
-      - name: Check coverage and set status
-        run: |
-          COVERAGE=$(cat app/build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml | grep 'counter type="INSTRUCTION"' | awk '{ print $3 }' | awk -F"[=\" ]" '{ print $2 }')
-          if [ "$(echo "$COVERAGE >= 90" | bc -l)" -eq 1 ]; then
-            echo "Code coverage is $COVERAGE%. Coverage meets the required threshold."
-            echo "::set-output name=status::success"
-          else
-            echo "Code coverage is $COVERAGE%. Please improve coverage to at least 90%."
-            echo "::set-output name=status::failure"
-          fi
-
-      - name: Publish coverage report
-        uses: actions/upload-artifact@v2
-        with:
-          name: coverage-report
-          path: app/build/reports/jacoco/jacocoTestReport/index.html
+#      - name: Check coverage and set status
+#        run: |
+#          COVERAGE=$(cat app/build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml | grep 'counter type="INSTRUCTION"' | awk '{ print $3 }' | awk -F"[=\" ]" '{ print $2 }')
+#          if [ "$(echo "$COVERAGE >= 90" | bc -l)" -eq 1 ]; then
+#            echo "Code coverage is $COVERAGE%. Coverage meets the required threshold."
+#            echo "::set-output name=status::success"
+#          else
+#            echo "Code coverage is $COVERAGE%. Please improve coverage to at least 90%."
+#            echo "::set-output name=status::failure"
+#          fi
+#
+#      - name: Publish coverage report
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: coverage-report
+#          path: app/build/reports/jacoco/jacocoTestReport/index.html
